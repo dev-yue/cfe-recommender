@@ -3,10 +3,17 @@
 Build a recommendation engine using Django &amp; a Machine Learning technique called Collaborative Filtering.
 
 # Django -> ML Pipeline
-    - Get Data
-    - Prepare Data -> Panda
-    - Train Model from Data -> Django x Celery -> Keras / PyTorch
-    - Use Model on New Data
+    - Get Data - via Django
+        - [x] User
+        - [] Ratings -> Collaborative Filtering
+        - [X] Dataset -> Movies
+            - Scrape from the Internet
+            - API -> Software-to-software
+            - User-generated content -> cold start problem
+            - [x] Open Source Datasets -> Kaggle -> The Movies Dataset
+    - Prepare Data - via Django & Panda
+    - Train Model from Data - via Django & Celery using Keras
+    - Use Model on New Data - via Django & Celery using Keras
 
 ## Helpful Guides
 - [Using a Cloud-based Redis Server](https://www.codingforentrepreneurs.com/blog/remote-redis-servers-for-development/)
