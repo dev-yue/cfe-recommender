@@ -45,7 +45,9 @@ INSTALLED_APPS = [
     "allauth.socialaccount",
     'django_celery_beat', #scheduler
     'django_celery_results', # saves our task results
+    'django_htmx',
     # internal apps
+    'exports',
     "movies",
     "profiles",
     "ratings",
@@ -67,6 +69,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django_htmx.middleware.HtmxMiddleware",
 ]
 
 ROOT_URLCONF = "cfehome.urls"
@@ -146,3 +149,5 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+MEDIA_ROOT = BASE_DIR / 'local-cdn' / 'media'
