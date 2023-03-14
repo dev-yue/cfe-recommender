@@ -6,11 +6,6 @@ from ratings.tasks import task_update_movie_ratings
 
 User = get_user_model()
 
-class Command(BaseCommand):
-    def add_arguments(self, parser):
-        parser.add_argument("count", nargs='?', default=1_000, type=int)
-        parser.add_argument("--all", action='store_true', default=False)
-    
+class Command(BaseCommand):    
     def handle(self, *args, **options):
         task_update_movie_ratings()
-        # task_calculate_movie_ratings(all=all, count=count)
